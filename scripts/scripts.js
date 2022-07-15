@@ -3,6 +3,7 @@
 const GRID_AREA = document.querySelector(".sketch-area__grid");
 const BTN_RESET_GRID = document.getElementById("resetgrid");
 const BTN_SET_GRID_SIZE = document.getElementById("setgrid");
+const BTN_CLEAR_CANVAS = document.getElementById("clear");
 const USER_COLOR = document.querySelector(
   ".sketch-area-controls__colors-picker"
 );
@@ -72,9 +73,8 @@ BTN_SET_GRID_SIZE.addEventListener("click", () => {
   deleteBoxes();
   initiateGrid(gridSize);
 });
+BTN_CLEAR_CANVAS.addEventListener("click", () => resetBackgrounds());
 
 USER_COLOR.addEventListener("change", (e) => {
   bgColor = e.target.value;
-  console.log(bgColor);
 });
-console.log(bgColor);

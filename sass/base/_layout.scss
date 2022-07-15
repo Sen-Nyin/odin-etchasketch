@@ -63,6 +63,11 @@
     display: grid;
     gap: 1rem;
   }
+
+  &__colors {
+    border-top: 2px solid var(--clr-light-grey-3);
+    border-bottom: 2px solid var(--clr-light-grey-3);
+  }
 }
 
 .btn {
