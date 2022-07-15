@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital@1&family=Pacifico&display=swap");
 *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
   all: unset;
   display: revert;
@@ -67,4 +68,77 @@ meter {
 
 :root {
   font-size: 62.5%;
+  --clr-dark-grey: hsl(0, 0%, 27%);
+  --clr-light-grey: hsl(0, 0%, 80%);
+  --clr-light-grey-2: hsl(0, 0%, 87%);
+  --clr-light-grey-3: hsl(0, 0%, 93%);
+  --clr-twitter: hsl(203, 89%, 53%);
+  --fnt-fam-default: "Merriweather Sans", sans-serif;
+  --fnt-fam-header: "Pacifico", cursive;
+  --fnt-size-default: 1.6rem;
+  --fnt-size-header-main: 4.5rem;
+  --fnt-size-header-sub: 2.5rem;
+  --line-height-default: 1.8;
+  --pd-head: 3% 10%;
+  --pd-main: 5% 10%;
+  --pd-foot: 2% 10%;
+}
+
+body {
+  font-family: var(--fnt-fam-default);
+  font-size: var(--fnt-size-default);
+  line-height: var(--line-height-default);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.link--twitter {
+  color: var(--clr-twitter);
+}
+.link--twitter:hover {
+  text-decoration: underline;
+}
+.link--footer {
+  color: var(--clr-light-grey-3);
+}
+.link--footer:hover {
+  text-decoration: underline;
+}
+
+.header-area__heading {
+  font-family: var(--fnt-fam-header);
+  font-size: var(--fnt-size-header-main);
+  color: var(--clr-dark-grey);
+}
+
+.header-area {
+  text-align: center;
+  background: var(--clr-light-grey-2);
+  width: 100%;
+  padding: var(--pd-head);
+}
+
+.sketch-area {
+  display: grid;
+  place-items: center;
+  padding: var(--pd-main);
+  margin-block: auto;
+}
+.sketch-area__grid {
+  display: grid;
+  border: 3px solid var(--clr-dark-grey);
+  border-radius: 2rem;
+  overflow: hidden;
+  background-color: var(--clr-light-grey-3);
+  padding: 1rem;
+  width: 60rem;
+  height: 60rem;
+}
+
+.footer-area {
+  text-align: center;
+  color: var(--clr-light-grey);
+  background: var(--clr-dark-grey);
+  padding: var(--pd-foot);
 }/*# sourceMappingURL=main.css.map */

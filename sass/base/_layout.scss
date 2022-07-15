@@ -1,0 +1,32 @@
+@use "base";
+@use "../abstracts/" as a;
+
+.header-area {
+  text-align: center;
+  background: var(--clr-light-grey-2);
+  width: 100%;
+  padding: var(--pd-head);
+}
+
+.sketch-area {
+  @include a.center();
+  padding: var(--pd-main);
+  margin-block: auto;
+  &__grid {
+    display: grid;
+    border: 3px solid var(--clr-dark-grey);
+    border-radius: 2rem;
+    overflow: hidden;
+    background-color: var(--clr-light-grey-3);
+    padding: 1rem;
+    width: 60rem;
+    height: 60rem;
+  }
+}
+
+.footer-area {
+  text-align: center;
+  color: var(--clr-light-grey);
+  background: var(--clr-dark-grey);
+  padding: var(--pd-foot);
+}

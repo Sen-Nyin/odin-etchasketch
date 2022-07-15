@@ -1,0 +1,9 @@
+@use "base";
+
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital@1&family=Pacifico&display=swap");
+
+.header-area__heading {
+  font-family: var(--fnt-fam-header);
+  font-size: var(--fnt-size-header-main);
+  color: var(--clr-dark-grey);
+}

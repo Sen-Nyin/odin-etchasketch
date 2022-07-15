@@ -1,0 +1,55 @@
+@use "../abstracts/" as a;
+
+:root {
+  font-size: 62.5%;
+
+  // Colours
+
+  --clr-dark-grey: hsl(0, 0%, 27%);
+  --clr-light-grey: hsl(0, 0%, 80%);
+  --clr-light-grey-2: hsl(0, 0%, 87%);
+  --clr-light-grey-3: hsl(0, 0%, 93%);
+
+  // Brand Colours
+
+  --clr-twitter: hsl(203, 89%, 53%);
+
+  // Font
+
+  --fnt-fam-default: "Merriweather Sans", sans-serif;
+  --fnt-fam-header: "Pacifico", cursive;
+  --fnt-size-default: 1.6rem;
+  --fnt-size-header-main: 4.5rem;
+  --fnt-size-header-sub: 2.5rem;
+  --line-height-default: 1.8;
+
+  // Padding
+
+  --pd-head: 3% 10%;
+  --pd-main: 5% 10%;
+  --pd-foot: 2% 10%;
+}
+
+body {
+  font-family: var(--fnt-fam-default);
+  font-size: var(--fnt-size-default);
+  line-height: var(--line-height-default);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  &--twitter {
+    color: var(--clr-twitter);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &--footer {
+    color: var(--clr-light-grey-3);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
