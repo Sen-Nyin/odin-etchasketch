@@ -95,6 +95,11 @@ BTN_RESET_GRID.addEventListener("click", () => resetGrid());
 
 BTN_SET_GRID_SIZE.addEventListener("click", () => {
   gridSize = prompt(`Choose your grid size. Currently ${gridSize}`);
+  while (gridSize > 100) {
+    gridSize = prompt(
+      `Please choose a size less than 100. Currently: ${gridSize}`
+    );
+  }
   deleteBoxes();
   initiateGrid(gridSize);
 });
