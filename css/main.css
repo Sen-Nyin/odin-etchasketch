@@ -131,7 +131,6 @@ body {
   border-radius: 2rem;
   overflow: hidden;
   background-color: var(--clr-light-grey-3);
-  padding: 1rem;
   width: 60rem;
   height: 60rem;
 }
@@ -141,4 +140,8 @@ body {
   color: var(--clr-light-grey);
   background: var(--clr-dark-grey);
   padding: var(--pd-foot);
+}
+
+.box {
+  border: 1px solid var(--clr-light-grey-2);
 }/*# sourceMappingURL=main.css.map */
