@@ -12,6 +12,8 @@ let gridSize = 16;
 let bgColor = "red";
 let randomise = "no";
 
+// DEFAULT GRID
+
 const initiateGrid = (gridSize) => {
   for (let i = 1; i <= gridSize ** 2; i++) {
     GRID_AREA.setAttribute(
@@ -24,7 +26,16 @@ const initiateGrid = (gridSize) => {
   }
 };
 
+// RESTORE GRID SIZE TO DEFAULT.
+
+const resetGrid = () => {
+  gridSize = 16;
+  deleteBoxes();
+  initiateGrid(gridSize);
+};
+
 // REMOVE BOXES
+
 const deleteBoxes = (gridSize) => {
   const boxes = document.querySelectorAll(".box");
   boxes.forEach((div) => {
@@ -33,30 +44,13 @@ const deleteBoxes = (gridSize) => {
 };
 
 // RESET BACKGROUND COLOURS
+
 const resetBackgrounds = () => {
   const boxes = document.querySelectorAll(".box");
   boxes.forEach((div) => {
     div.removeAttribute("style");
   });
 };
-
-const randomColors = () => {
-  let col = "#";
-  for (let i = 0; i < 6; i++) {
-    const random = Math.random();
-    const bit = (random * 16) | 0;
-    col += bit.toString(16);
-  }
-  return col;
-};
-
-// RESTORE GRID SIZE TO DEFAULT.
-const resetGrid = () => {
-  gridSize = 16;
-  deleteBoxes();
-  initiateGrid(gridSize);
-};
-initiateGrid(gridSize);
 
 // SET BACKGROUND COLOURS
 
@@ -83,19 +77,35 @@ function stopColor() {
   });
 }
 
+// RANDOM COLOUR GENERATOR
+
+const randomColors = () => {
+  let col = "#";
+  for (let i = 0; i < 6; i++) {
+    const random = Math.random();
+    const bit = (random * 16) | 0;
+    col += bit.toString(16);
+  }
+  return col;
+};
+
+// EVENT LISTENERS
+
 BTN_RESET_GRID.addEventListener("click", () => resetGrid());
+
 BTN_SET_GRID_SIZE.addEventListener("click", () => {
   gridSize = prompt(`Choose your grid size. Currently ${gridSize}`);
   deleteBoxes();
   initiateGrid(gridSize);
 });
+
 BTN_CLEAR_CANVAS.addEventListener("click", () => resetBackgrounds());
 
-USER_COLOR.addEventListener("change", (e) => {
-  bgColor = e.target.value;
-});
+USER_COLOR.addEventListener("change", (e) => (bgColor = e.target.value));
 
-RANDOMISE_COLOR.addEventListener("click", () => {
-  randomise = `${randomise === "yes" ? "no" : "yes"}`;
-  console.log(randomise);
-});
+RANDOMISE_COLOR.addEventListener(
+  "click",
+  () => (randomise = `${randomise === "yes" ? "no" : "yes"}`)
+);
+
+initiateGrid(gridSize);

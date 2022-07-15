@@ -9,23 +9,25 @@
   --clr-light-grey: hsl(0, 0%, 80%);
   --clr-light-grey-2: hsl(0, 0%, 87%);
   --clr-light-grey-3: hsl(0, 0%, 93%);
+  --clr-pink: hsl(330, 100%, 71%);
+  --clr-lightblue: hsl(195, 53%, 79%);
 
   // Brand Colours
 
-  --clr-twitter: hsl(203, 89%, 53%);
+  --clr-blue: hsl(203, 89%, 53%); // twitter
 
   // Font
 
   --fnt-fam-default: "Merriweather Sans", sans-serif;
   --fnt-fam-header: "Pacifico", cursive;
   --fnt-size-default: 1.6rem;
-  --fnt-size-header-main: 4.5rem;
+  --fnt-size-header-main: 6.5rem;
   --fnt-size-header-sub: 2.5rem;
   --line-height-default: 1.8;
 
   // Padding
 
-  --pd-head: 3% 10%;
+  --pd-head: 2% 10%;
   --pd-main: 5% 10%;
   --pd-foot: 2% 10%;
 }
@@ -41,7 +43,7 @@ body {
 
 .link {
   &--twitter {
-    color: var(--clr-twitter);
+    color: var(--clr-blue);
     &:hover {
       text-decoration: underline;
     }
