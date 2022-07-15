@@ -10,9 +10,12 @@
 
 .sketch-area {
   @include a.center();
+  grid-template-areas: "controls grid";
+  gap: 4rem;
   padding: var(--pd-main);
   margin-block: auto;
   &__grid {
+    grid-area: grid;
     display: grid;
     border: 3px solid var(--clr-dark-grey);
     border-radius: 2rem;
@@ -32,4 +35,43 @@
 
 .box {
   border: 1px solid var(--clr-light-grey-2);
+}
+
+.sketch-area-controls {
+  grid-area: "controls";
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: space-between;
+  align-content: center;
+  border: 3px solid var(--clr-dark-grey);
+  border-radius: 2rem;
+  padding: 2rem;
+  text-align: center;
+  width: max-content;
+
+  &__text {
+    padding-bottom: 1rem;
+  }
+
+  &__colors-picker {
+    width: 7rem;
+    height: 4rem;
+  }
+
+  &__grid-size {
+    display: grid;
+    gap: 1rem;
+  }
+}
+
+.btn {
+  background: var(--clr-twitter);
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 10rem;
+  color: var(--clr-light-grey-3);
+  display: block;
+  width: 100%;
 }

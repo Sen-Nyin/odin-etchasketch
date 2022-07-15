@@ -1,6 +1,11 @@
 "use strict";
 
 const GRID_AREA = document.querySelector(".sketch-area__grid");
+const BTN_RESET_GRID = document.getElementById("resetgrid");
+const BTN_SET_GRID_SIZE = document.getElementById("setgrid");
+const USER_COLOR = document.querySelector(
+  ".sketch-area-controls__colors-picker"
+);
 let gridSize = 16;
 let bgColor = "red";
 
@@ -60,3 +65,16 @@ function stopColor() {
     div.replaceWith(div.cloneNode(true));
   });
 }
+
+BTN_RESET_GRID.addEventListener("click", () => resetGrid());
+BTN_SET_GRID_SIZE.addEventListener("click", () => {
+  gridSize = prompt(`Choose your grid size. Currently ${gridSize}`);
+  deleteBoxes();
+  initiateGrid(gridSize);
+});
+
+USER_COLOR.addEventListener("change", (e) => {
+  bgColor = e.target.value;
+  console.log(bgColor);
+});
+console.log(bgColor);
