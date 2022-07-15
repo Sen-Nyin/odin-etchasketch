@@ -136,6 +136,7 @@ body {
   background-color: var(--clr-light-grey-3);
   width: 60rem;
   height: 60rem;
+  cursor: pointer;
 }
 
 .footer-area {
@@ -162,6 +163,10 @@ body {
   text-align: center;
   width: max-content;
 }
+.sketch-area-controls > div:not(:last-child) {
+  border-bottom: 2px solid var(--clr-light-grey-3);
+  padding-bottom: 1rem;
+}
 .sketch-area-controls__text {
   padding-bottom: 1rem;
 }
@@ -174,8 +179,10 @@ body {
   gap: 1rem;
 }
 .sketch-area-controls__colors {
-  border-top: 2px solid var(--clr-light-grey-3);
-  border-bottom: 2px solid var(--clr-light-grey-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .btn {
@@ -187,4 +194,11 @@ body {
   color: var(--clr-light-grey-3);
   display: block;
   width: 100%;
+}
+
+#randomise {
+  width: 1.5rem;
+  height: 1.5rem;
+  accent-color: var(--clr-twitter);
+  appearance: checkbox;
 }/*# sourceMappingURL=main.css.map */

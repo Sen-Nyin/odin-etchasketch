@@ -7,8 +7,10 @@ const BTN_CLEAR_CANVAS = document.getElementById("clear");
 const USER_COLOR = document.querySelector(
   ".sketch-area-controls__colors-picker"
 );
+const RANDOMISE_COLOR = document.getElementById("randomise");
 let gridSize = 16;
 let bgColor = "red";
+let randomise = "no";
 
 const initiateGrid = (gridSize) => {
   for (let i = 1; i <= gridSize ** 2; i++) {
@@ -38,6 +40,16 @@ const resetBackgrounds = () => {
   });
 };
 
+const randomColors = () => {
+  let col = "#";
+  for (let i = 0; i < 6; i++) {
+    const random = Math.random();
+    const bit = (random * 16) | 0;
+    col += bit.toString(16);
+  }
+  return col;
+};
+
 // RESTORE GRID SIZE TO DEFAULT.
 const resetGrid = () => {
   gridSize = 16;
@@ -55,7 +67,11 @@ function applyColor() {
   const divs = document.querySelectorAll(".box");
   divs.forEach((div) => {
     div.addEventListener("mousemove", function (e) {
-      this.style.backgroundColor = `${bgColor}`;
+      if (randomise === "no") {
+        this.style.backgroundColor = `${bgColor}`;
+      } else {
+        this.style.backgroundColor = `${randomColors()}`;
+      }
     });
   });
 }
@@ -77,4 +93,9 @@ BTN_CLEAR_CANVAS.addEventListener("click", () => resetBackgrounds());
 
 USER_COLOR.addEventListener("change", (e) => {
   bgColor = e.target.value;
+});
+
+RANDOMISE_COLOR.addEventListener("click", () => {
+  randomise = `${randomise === "yes" ? "no" : "yes"}`;
+  console.log(randomise);
 });
