@@ -126,6 +126,8 @@ body {
   gap: 4rem;
   padding: var(--pd-main);
   margin-block: auto;
+  margin-inline: auto;
+  width: max-content;
 }
 .sketch-area__grid {
   grid-area: grid;
