@@ -15,6 +15,9 @@ let randomise = "no";
 // DEFAULT GRID
 
 const initiateGrid = (gridSize) => {
+  if (!gridSize) {
+    gridSize = 16;
+  }
   for (let i = 1; i <= gridSize ** 2; i++) {
     GRID_AREA.setAttribute(
       "style",
