@@ -7,9 +7,11 @@
   width: 100%;
   padding: var(--pd-head);
   color: var(--clr-light-grey-2);
+  grid-area: head;
 }
 
 .sketch-area {
+  grid-area: main;
   @include a.center();
   grid-template-areas: "controls grid";
   gap: 4rem;
@@ -24,8 +26,8 @@
     border-radius: 2rem;
     overflow: hidden;
     background-color: var(--clr-light-grey-3);
-    width: 60rem;
-    height: 60rem;
+    width: 40vh;
+    height: 40vh;
     cursor: pointer;
   }
 }
@@ -35,6 +37,7 @@
   color: var(--clr-light-grey);
   background: var(--clr-dark-grey);
   padding: var(--pd-foot);
+  grid-area: foot;
 }
 
 .box {
@@ -45,23 +48,17 @@
   grid-area: "controls";
   display: flex;
   flex-direction: column;
+  height: 100%;
   gap: 3rem;
-  justify-content: space-between;
-  align-content: center;
-  border: 3px solid var(--clr-dark-grey);
+  align-items: center;
   background: var(--clr-light-grey-3);
-  border-radius: 2rem;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
-  width: max-content;
+  flex-wrap: wrap;
 
   & > div:not(:last-child) {
-    border-bottom: 2px solid var(--clr-light-grey-3);
-    padding-bottom: 1rem;
-  }
-
-  &__text {
-    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--clr-light-grey-2);
+    padding-bottom: 2rem;
   }
 
   &__colors-picker {
@@ -70,8 +67,12 @@
   }
 
   &__grid-size {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
     gap: 1rem;
+    width: 100%;
   }
 
   &__colors {
@@ -89,7 +90,6 @@
   cursor: pointer;
   border-radius: 10rem;
   color: var(--clr-light-grey-3);
-  display: block;
   width: 100%;
   transition: all 0.25s ease;
 
@@ -104,4 +104,9 @@
   height: 1.5rem;
   accent-color: var(--clr-blue);
   appearance: checkbox;
+}
+
+.nav {
+  width: 100%;
+  grid-area: nav;
 }

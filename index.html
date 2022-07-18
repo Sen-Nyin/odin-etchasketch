@@ -16,17 +16,15 @@
         The Odin Project, JavaScript Foundations project 2
       </h2>
     </header>
-    <main class="sketch-area">
+    <nav class="nav">
       <div class="sketch-area-controls">
         <div class="sketch-area-controls__grid-size">
-          <p class="sketch-area-controls__text">Canvas</p>
-          <button class="btn" id="setgrid">Choose Size</button>
-          <button class="btn" id="clear">Clear Canvas</button>
-          <button class="btn" id="resetgrid">Full Reset</button>
+          <button class="btn" id="setgrid">Size</button>
+          <button class="btn" id="clear">Clear</button>
+          <button class="btn" id="resetgrid">Reset</button>
         </div>
 
         <div class="sketch-area-controls__colors">
-          <p class="sketch-area-controls__text">Colors</p>
           <input
             class="sketch-area-controls__colors-picker"
             type="color"
@@ -39,6 +37,8 @@
           </label>
         </div>
       </div>
+    </nav>
+    <main class="sketch-area">
       <section class="sketch-area__grid"></section>
     </main>
     <footer class="footer-area">

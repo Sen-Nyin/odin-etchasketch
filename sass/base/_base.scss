@@ -37,8 +37,12 @@ body {
   font-size: var(--fnt-size-default);
   line-height: var(--line-height-default);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas:
+    "head head head head head head"
+    "nav main main main main main"
+    "foot foot foot foot foot foot";
+  // flex-direction: column;
 }
 
 .link {
